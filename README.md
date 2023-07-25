@@ -11,6 +11,7 @@ For the latest Melissa DQ Suite release notes, please visit:
 
 ## Tested Environments
 - Windows 64-bit .NET Runtimes 7.0, Powershell 5.1
+- Ubuntu Linux 20.04.04 LTS 64-bit .NET 7.0
 - Melissa DQ Suite for 2023-06
 
 ## Getting started
@@ -19,18 +20,24 @@ These instructions will get you a copy of the project up and running on your loc
 
 ### Download this project
 ```
-$ https://github.com/MelissaData/DQSuite-Downloader.git
+$ git clone https://github.com/MelissaData/DQSuite-Downloader.git
 $ cd DQSuite-Downloader
 ```
 
 ### Set up Melissa Updater
 
 Melissa Updater is a CLI application allowing the user to update their Melissa applications/data.
-- Download Melissa Updater here: <https://releases.melissadata.net/Download/Library/WINDOWS/NET/ANY/latest/MelissaUpdater.exe>
-- Put `MelissaUpdater.exe` in the `MelissaUpdater` folder 
+- Download Melissa Updater here: 
+	
+	- Windows: <https://releases.melissadata.net/Download/Library/WINDOWS/NET/ANY/latest/MelissaUpdater.exe>
+	- Linux: <https://releases.melissadata.net/Download/Library/LINUX/NET/ANY/latest/MelissaUpdater>
+
+- Put `MelissaUpdater.exe` or `MelissaUpdater` in the `MelissaUpdater` folder 
 - For more information about the Melissa Updater, please visit: https://www.melissa.com/quickstart-guides/melissa-releases-web-service# 
 
-### Set up Powershell settings
+## Windows
+
+#### Set up Powershell settings
 
 If running Powershell for the first time, you will need to run this command in the Powershell console: `Set-ExecutionPolicy RemoteSigned`.
 The console will then prompt you with the following warning shown in the image below. 
@@ -39,20 +46,43 @@ The console will then prompt you with the following warning shown in the image b
 	
  ![alt text](/screenshots/powershell_executionpolicy.png)
 
-### Set License
+#### Set License
 
 You will need to set your license before running the `DQSuite_Downloader.ps1`. 
-You can check the powershell script for '$license = {your_license}' and change the variable value to your license string.
+You can check the powershell script for '$license = "your_license"' and change the variable value to your license string.
 
-![alt text](/screenshots/license_variable.png)
+```
+# License string
+$license            = "your_license"
+```
 
-
-## Run Script
+#### Run Powershell Script
 
 Once you have finished all the set up, let's run the script:
 
 ```
 $ .\DQSuite_Downloader.ps1
+```
+
+## Linux
+
+#### Set License
+
+You will need to set your license before running the `DQSuite_Downloader.sh`. 
+You can check the bash script for 'license="your_license"' and change the variable value to your license string.
+
+```
+# License string
+license="your_license"
+```
+
+
+#### Run Bash Script
+
+Once you have finished all the set up, let's run the script:
+
+```
+$ ./DQSuite_Downloader.sh
 ```
 
 ## Contact Us

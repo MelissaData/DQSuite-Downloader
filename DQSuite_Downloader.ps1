@@ -117,7 +117,7 @@ Get-File -Filename "mdPhone.dll" -Type "BINARY" -OperatingSystem "WINDOWS" -Comp
 
 # Address Object Wrappers
 $target_path = "Wrappers\AddressObject\dotnet"
-Get-File -Filename "mdAddr_cSharpCode.cs" -Type "INTERFACE" -OperatingSystem "WINDOWS" -Compiler "NET" -Architecture "ANY" -TargetDirectory $target_path
+Get-File -Filename "mdAddr_cSharpCode.cs" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "NET" -Architecture "ANY" -TargetDirectory $target_path
 
 $target_path = "Wrappers\AddressObject\python3"
 Get-File -Filename "mdAddr_pythoncode.py" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "PYTHON" -Architecture "ANY" -TargetDirectory $target_path
@@ -139,7 +139,7 @@ Get-File -Filename "mdAddr_phpCode.php" -Type "INTERFACE" -OperatingSystem "ANY"
 
 # Email Object Wrappers
 $target_path = "Wrappers\EmailObject\dotnet"
-Get-File -Filename "mdEmail_cSharpCode.cs" -Type "INTERFACE" -OperatingSystem "WINDOWS" -Compiler "NET" -Architecture "ANY" -TargetDirectory $target_path
+Get-File -Filename "mdEmail_cSharpCode.cs" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "NET" -Architecture "ANY" -TargetDirectory $target_path
 
 $target_path = "Wrappers\EmailObject\python3"
 Get-File -Filename "mdEmail_pythoncode.py" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "PYTHON" -Architecture "ANY" -TargetDirectory $target_path
@@ -161,7 +161,7 @@ Get-File -Filename "mdEmail_phpcode.php" -Type "INTERFACE" -OperatingSystem "ANY
 
 # Name Object Wrappers
 $target_path = "Wrappers\NameObject\dotnet"
-Get-File -Filename "mdName_cSharpCode.cs" -Type "INTERFACE" -OperatingSystem "WINDOWS" -Compiler "NET" -Architecture "ANY" -TargetDirectory $target_path
+Get-File -Filename "mdName_cSharpCode.cs" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "NET" -Architecture "ANY" -TargetDirectory $target_path
 
 $target_path = "Wrappers\NameObject\python3"
 Get-File -Filename "mdName_pythoncode.py" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "PYTHON" -Architecture "ANY" -TargetDirectory $target_path
@@ -183,7 +183,7 @@ Get-File -Filename "mdName_phpcode.php" -Type "INTERFACE" -OperatingSystem "ANY"
 
 # Phone Object Wrappers
 $target_path = "Wrappers\PhoneObject\dotnet"
-Get-File -Filename "mdPhone_cSharpCode.cs" -Type "INTERFACE" -OperatingSystem "WINDOWS" -Compiler "NET" -Architecture "ANY" -TargetDirectory $target_path
+Get-File -Filename "mdPhone_cSharpCode.cs" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "NET" -Architecture "ANY" -TargetDirectory $target_path
 
 $target_path = "Wrappers\PhoneObject\python3"
 Get-File -Filename "mdPhone_pythoncode.py" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "PYTHON" -Architecture "ANY" -TargetDirectory $target_path
@@ -201,5 +201,3 @@ Get-File -Filename "mdPhone.lib" -Type "INTERFACE" -OperatingSystem "WINDOWS" -C
 $target_path = "Wrappers\PhoneObject\php"
 Get-File -Filename "mdPhone_phpCode.cpp" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "PHP" -Architecture "ANY" -TargetDirectory $target_path
 Get-File -Filename "mdPhone_phpcode.php" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "PHP" -Architecture "ANY" -TargetDirectory $target_path
-
-
