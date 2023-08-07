@@ -54,15 +54,8 @@ function Get-Manifest {
     )
        
     $path = "$target_directory\$TargetDirectory" 
-    $verifyPath = "$target_directory\$TargetDirectory"
-    $params = "verify", "-p", "$verifyPath"
-    & $program_path $params
-    
-    if($? -eq $False) {
-      Invoke-Expression "$program_path manifest -f -p `"$ProductName`" -r `"$release_version`" -l `"$license`" -t `"$path`" " 
-    } else {
-      Invoke-Expression "$program_path manifest -p `"$ProductName`" -r `"$release_version`" -l `"$license`" -t `"$path`" " 
-    }
+
+    Invoke-Expression "$program_path manifest -p `"$ProductName`" -r `"$release_version`" -l `"$license`" -t `"$path`" " 
 }
 
 
@@ -75,19 +68,19 @@ function Get-Manifest {
 
 # Address Object Data
 $target_path = "Data\AddressObject"
-Get-Manifest -ProductName "DQ_ADDR_DATA" -TargetDirectory $target_path
+Get-Manifest -ProductName "dq_addr_data" -TargetDirectory $target_path
 
 # Email Object Data
 $target_path = "Data\EmailObject"
-Get-Manifest -ProductName "DQ_EMAIL_DATA" -TargetDirectory $target_path
+Get-Manifest -ProductName "dq_email_data" -TargetDirectory $target_path
 
 # Name Object Data
 $target_path = "Data\NameObject"
-Get-Manifest -ProductName "DQ_NAME_DATA" -TargetDirectory $target_path
+Get-Manifest -ProductName "dq_name_data" -TargetDirectory $target_path
 
 # Phone Object Data
 $target_path = "Data\PhoneObject"
-Get-Manifest -ProductName "DQ_PHONE_DATA" -TargetDirectory $target_path
+Get-Manifest -ProductName "dq_phone_data" -TargetDirectory $target_path
 
 
 ######################
@@ -116,88 +109,17 @@ Get-File -Filename "mdPhone.dll" -Type "BINARY" -OperatingSystem "WINDOWS" -Comp
 #######################
 
 # Address Object Wrappers
-$target_path = "Wrappers\AddressObject\dotnet"
-Get-File -Filename "mdAddr_cSharpCode.cs" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "NET" -Architecture "ANY" -TargetDirectory $target_path
-
-$target_path = "Wrappers\AddressObject\python3"
-Get-File -Filename "mdAddr_pythoncode.py" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "PYTHON" -Architecture "ANY" -TargetDirectory $target_path
-
-$target_path = "Wrappers\AddressObject\java"
-Get-File -Filename "mdAddr_JavaCode.zip" -Type "DATA" -OperatingSystem "ANY" -Compiler "ANY" -Architecture "ANY" -TargetDirectory $target_path
-Get-File -Filename "mdAddrJavaWrapper.cpp" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "JAVA" -Architecture "ANY" -TargetDirectory $target_path
-Get-File -Filename "mdAddrJavaWrapper.dll" -Type "INTERFACE" -OperatingSystem "WINDOWS" -Compiler "JAVA" -Architecture "64BIT" -TargetDirectory $target_path
-
-$target_path = "Wrappers\AddressObject\cpp"
-Get-File -Filename "mdEnums.h" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "C" -Architecture "ANY" -TargetDirectory $target_path
-Get-File -Filename "mdAddr.h" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "C" -Architecture "ANY" -TargetDirectory $target_path
-Get-File -Filename "mdAddr.lib" -Type "INTERFACE" -OperatingSystem "WINDOWS" -Compiler "C" -Architecture "64BIT" -TargetDirectory $target_path
-
-$target_path = "Wrappers\AddressObject\php"
-Get-File -Filename "mdAddr_phpCode.cpp" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "PHP" -Architecture "ANY" -TargetDirectory $target_path
-Get-File -Filename "mdAddr_phpCode.php" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "PHP" -Architecture "ANY" -TargetDirectory $target_path
-
+$target_path = "Wrappers\AddressObject"
+Get-Manifest -ProductName "dq_addr_wrappers" -TargetDirectory $target_path
 
 # Email Object Wrappers
-$target_path = "Wrappers\EmailObject\dotnet"
-Get-File -Filename "mdEmail_cSharpCode.cs" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "NET" -Architecture "ANY" -TargetDirectory $target_path
-
-$target_path = "Wrappers\EmailObject\python3"
-Get-File -Filename "mdEmail_pythoncode.py" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "PYTHON" -Architecture "ANY" -TargetDirectory $target_path
-
-$target_path = "Wrappers\EmailObject\java"
-Get-File -Filename "mdEmail_JavaCode.zip" -Type "DATA" -OperatingSystem "ANY" -Compiler "ANY" -Architecture "ANY" -TargetDirectory $target_path
-Get-File -Filename "mdEmailJavaWrapper.cpp" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "JAVA" -Architecture "ANY" -TargetDirectory $target_path
-Get-File -Filename "mdEmailJavaWrapper.dll" -Type "INTERFACE" -OperatingSystem "WINDOWS" -Compiler "JAVA" -Architecture "64BIT" -TargetDirectory $target_path
-
-$target_path = "Wrappers\EmailObject\cpp"
-Get-File -Filename "mdEnums.h" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "C" -Architecture "ANY" -TargetDirectory $target_path
-Get-File -Filename "mdEmail.h" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "C" -Architecture "ANY" -TargetDirectory $target_path
-Get-File -Filename "mdEmail.lib" -Type "INTERFACE" -OperatingSystem "WINDOWS" -Compiler "C" -Architecture "64BIT" -TargetDirectory $target_path
-
-$target_path = "Wrappers\EmailObject\php"
-Get-File -Filename "mdEmail_phpCode.cpp" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "PHP" -Architecture "ANY" -TargetDirectory $target_path
-Get-File -Filename "mdEmail_phpcode.php" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "PHP" -Architecture "ANY" -TargetDirectory $target_path
-
+$target_path = "Wrappers\EmailObject"
+Get-Manifest -ProductName "dq_email_wrappers" -TargetDirectory $target_path
 
 # Name Object Wrappers
-$target_path = "Wrappers\NameObject\dotnet"
-Get-File -Filename "mdName_cSharpCode.cs" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "NET" -Architecture "ANY" -TargetDirectory $target_path
-
-$target_path = "Wrappers\NameObject\python3"
-Get-File -Filename "mdName_pythoncode.py" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "PYTHON" -Architecture "ANY" -TargetDirectory $target_path
-
-$target_path = "Wrappers\NameObject\java"
-Get-File -Filename "mdName_JavaCode.zip" -Type "DATA" -OperatingSystem "ANY" -Compiler "ANY" -Architecture "ANY" -TargetDirectory $target_path
-Get-File -Filename "mdNameJavaWrapper.cpp" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "JAVA" -Architecture "ANY" -TargetDirectory $target_path
-Get-File -Filename "mdNameJavaWrapper.dll" -Type "INTERFACE" -OperatingSystem "WINDOWS" -Compiler "JAVA" -Architecture "64BIT" -TargetDirectory $target_path
-
-$target_path = "Wrappers\NameObject\cpp"
-Get-File -Filename "mdNameEnums.h" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "C" -Architecture "ANY" -TargetDirectory $target_path
-Get-File -Filename "mdName.h" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "C" -Architecture "ANY" -TargetDirectory $target_path
-Get-File -Filename "mdName.lib" -Type "INTERFACE" -OperatingSystem "WINDOWS" -Compiler "C" -Architecture "64BIT" -TargetDirectory $target_path
-
-$target_path = "Wrappers\NameObject\php"
-Get-File -Filename "mdName_phpCode.cpp" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "PHP" -Architecture "ANY" -TargetDirectory $target_path
-Get-File -Filename "mdName_phpcode.php" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "PHP" -Architecture "ANY" -TargetDirectory $target_path
-
+$target_path = "Wrappers\NameObject"
+Get-Manifest -ProductName "dq_name_wrappers" -TargetDirectory $target_path
 
 # Phone Object Wrappers
-$target_path = "Wrappers\PhoneObject\dotnet"
-Get-File -Filename "mdPhone_cSharpCode.cs" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "NET" -Architecture "ANY" -TargetDirectory $target_path
-
-$target_path = "Wrappers\PhoneObject\python3"
-Get-File -Filename "mdPhone_pythoncode.py" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "PYTHON" -Architecture "ANY" -TargetDirectory $target_path
-
-$target_path = "Wrappers\PhoneObject\java"
-Get-File -Filename "mdPhone_JavaCode.zip" -Type "DATA" -OperatingSystem "ANY" -Compiler "ANY" -Architecture "ANY" -TargetDirectory $target_path
-Get-File -Filename "mdPhoneJavaWrapper.cpp" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "JAVA" -Architecture "ANY" -TargetDirectory $target_path
-Get-File -Filename "mdPhoneJavaWrapper.dll" -Type "INTERFACE" -OperatingSystem "WINDOWS" -Compiler "JAVA" -Architecture "64BIT" -TargetDirectory $target_path
-
-$target_path = "Wrappers\PhoneObject\cpp"
-Get-File -Filename "mdEnums.h" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "C" -Architecture "ANY" -TargetDirectory $target_path
-Get-File -Filename "mdPhone.h" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "C" -Architecture "ANY" -TargetDirectory $target_path
-Get-File -Filename "mdPhone.lib" -Type "INTERFACE" -OperatingSystem "WINDOWS" -Compiler "C" -Architecture "64BIT" -TargetDirectory $target_path
-
-$target_path = "Wrappers\PhoneObject\php"
-Get-File -Filename "mdPhone_phpCode.cpp" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "PHP" -Architecture "ANY" -TargetDirectory $target_path
-Get-File -Filename "mdPhone_phpcode.php" -Type "INTERFACE" -OperatingSystem "ANY" -Compiler "PHP" -Architecture "ANY" -TargetDirectory $target_path
+$target_path = "Wrappers\PhoneObject"
+Get-Manifest -ProductName "dq_phone_wrappers" -TargetDirectory $target_path
