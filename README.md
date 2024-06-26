@@ -12,7 +12,7 @@ For the latest Melissa DQ Suite release notes, please visit:
 ## Tested Environments
 - Windows 64-bit .NET Runtimes 7.0, Powershell 5.1
 - Ubuntu Linux 20.04.04 LTS 64-bit .NET 7.0
-- Melissa DQ Suite for 2024-05
+- Melissa DQ Suite for 2024-06
 
 ## Getting started
 
