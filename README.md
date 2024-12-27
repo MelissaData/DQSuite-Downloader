@@ -33,7 +33,7 @@ Melissa Updater is a CLI application allowing the user to update their Melissa a
 	- Linux: <https://releases.melissadata.net/Download/Library/LINUX/NET/ANY/latest/MelissaUpdater>
 
 - Put `MelissaUpdater.exe` or `MelissaUpdater` in the `MelissaUpdater` folder
-- For more information about the Melissa Updater, please visit: https://www.melissa.com/quickstart-guides/melissa-releases-web-service#
+- For more information about the Melissa Updater, please visit: https://docs.melissa.com/software/melissa-updater/melissa-updater-index.html
 
 ## Windows
 
