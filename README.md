@@ -2,7 +2,7 @@
 
 This is the script that downloads Melissa DQ Suite for you to use.
 
-For the latest Melissa DQ Suite release notes, please visit:
+To view the latest Melissa DQ Suite release notes or to subscribe to product notifications, please visit:
 - https://releasenotes.melissa.com/on-premise-api/address-object/
 - https://releasenotes.melissa.com/on-premise-api/email-object/
 - https://releasenotes.melissa.com/on-premise-api/name-object/
